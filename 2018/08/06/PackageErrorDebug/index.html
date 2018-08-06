@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Bellong">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Bellong様"/>
+  <meta property="og:description" content="艦これ、始まるよ" />
+  <meta property="og:site_name" content="Bellong様"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://yoursite.com"/>
+  
+    <link rel="alternate" href="/atom.xml" title="Bellong様" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Bellong様</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/timg2.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Untitled Post</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/GreeeenPepper">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:wuyize1994@163.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Bellong</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2018-08-06</span>
+            <span class="time">23:20:54</span>
+          </span>
+          
+        </div>
+        <!-- Tags -->
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h1 id="NLP分词处理工具程序打包成exe时遇到的坑"><a href="#NLP分词处理工具程序打包成exe时遇到的坑" class="headerlink" title="NLP分词处理工具程序打包成exe时遇到的坑"></a>NLP分词处理工具程序打包成exe时遇到的坑</h1><hr>
+<p>因为系统上自带的python是2.7版本的，然后笔者习惯性用了3.6版本的python来写的这个工具，因为考虑到一些库可能会不支持低版本之类的。。</p>
+<p>而且因为拿不到管理员权限我改不了环境变量等等东西，用pyinstaller的时候就很坑。。</p>
+<p>总结如下:</p>
+<ul>
+<li>因为系统默认版本对不上，所以从Github上直接搞下来<a href="https://github.com/pyinstaller/pyinstaller" target="_blank" rel="noopener">pyinstaller</a><br>正常打包操作如下。。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E:\pyinstaller-develop&gt; E:\Python36\python.exe pyinstaller.py -F test.py</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>然后如下报了一万个错，虽然也生成了相应的test.exe<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">9474 WARNING: lib not found: api-ms-win-crt-string-l1-1-0.dll dependency of E:\Python36\lib\site-packages\pywin32_system32\pywintypes36.dll</span><br><span class="line">9495 WARNING: lib not found: api-ms-win-crt-stdio-l1-1-0.dll dependency of E:\Python36\lib\site-packages\pywin32_system32\pywintypes36.dll</span><br><span class="line">9511 WARNING: lib not found: api-ms-win-crt-heap-l1-1-0.dll dependency of E:\Python36\lib\site-packages\pywin32_system32\pywintypes36.dll</span><br><span class="line">9528 WARNING: lib not found: api-ms-win-crt-time-l1-1-0.dll dependency of E:\Python36\lib\site-packages\pywin32_system32\pywintypes36.dll</span><br><span class="line">9546 WARNING: lib not found: api-ms-win-crt-runtime-l1-1-0.dll dependency of E:\Python36\lib\site-packages\pywin32_system32\pywintypes36.dll</span><br><span class="line">9585 WARNING: lib not found: api-ms-win-crt-utility-l1-1-0.dll dependency of E:\Python36\lib\site-packages\pywin32_system32\pythoncom36.dll</span><br><span class="line">9604 WARNING: lib not found: api-ms-win-crt-string-l1-1-0.dll dependency of E:\Python36\lib\site-packages\pywin32_system32\pythoncom36.dll</span><br><span class="line">9624 WARNING: lib not found: api-ms-win-crt-stdio-l1-1-0.dll dependency of E:\Python36\lib\site-packages\pywin32_system32\pythoncom36.dll</span><br><span class="line">9641 WARNING: lib not found: api-ms-win-crt-heap-l1-1-0.dll dependency of E:\Python36\lib\site-packages\pywin32_system32\pythoncom36.dll</span><br><span class="line">9658 WARNING: lib not found: api-ms-win-crt-runtime-l1-1-0.dll dependency of E:\Python36\lib\site-packages\pywin32_system32\pythoncom36.dll</span><br><span class="line">9684 WARNING: lib not found: api-ms-win-crt-math-l1-1-0.dll dependency of E:\Python36\DLLs\_decimal.pyd</span><br><span class="line">9703 WARNING: lib not found: api-ms-win-crt-stdio-l1-1-0.dll dependency of E:\Python36\DLLs\_decimal.pyd</span><br><span class="line">9720 WARNING: lib not found: api-ms-win-crt-convert-l1-1-0.dll dependency of E:\Python36\DLLs\_decimal.pyd</span><br><span class="line">9736 WARNING: lib not found: api-ms-win-crt-heap-l1-1-0.dll dependency of E:\Python36\DLLs\_decimal.pyd</span><br><span class="line">9752 WARNING: lib not found: api-ms-win-crt-runtime-l1-1-0.dll dependency of E:\Python36\DLLs\_decimal.pyd</span><br><span class="line">9769 WARNING: lib not found: api-ms-win-crt-locale-l1-1-0.dll dependency of E:\Python36\DLLs\_decimal.pyd</span><br><span class="line">9787 WARNING: lib not found: api-ms-win-crt-string-l1-1-0.dll dependency of E:\Python36\DLLs\_decimal.pyd</span><br><span class="line">9808 WARNING: lib not found: api-ms-win-crt-string-l1-1-0.dll dependency of E:\Python36\DLLs\_ctypes.pyd</span><br><span class="line">9826 WARNING: lib not found: api-ms-win-crt-stdio-l1-1-0.dll dependency of E:\Python36\DLLs\_ctypes.pyd</span><br></pre></td></tr></table></figure></p>
+<p>然而运行时会报错，在错误信息所提示的路径里找不到jieba分词的dict.txt文件。<br>经过查阅相关问题，解决方法如下，将dict.txt文件放在与test.exe相同目录下，在import jieba导入jieba库后立即自定义加载的路径，问题解决成功。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line">jieba.set_dictionary(<span class="string">"dict.txt"</span>)</span><br><span class="line">jieba.initialize()</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> eel</span><br><span class="line"><span class="keyword">import</span> traceback</span><br></pre></td></tr></table></figure></p>
+<p>然而这个好了之后引入的eel库又出问题了。。<br>提示<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ModuleNotFoundError: No module named <span class="string">'gevent.__hub_local'</span></span><br></pre></td></tr></table></figure></p>
+<p>根据网上提示，先用makespec.py生成该项目的.spec文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = Analysis([<span class="string">'..\\test.py'</span>],</span><br><span class="line">             pathex=[<span class="string">'E:\\pyinstaller-develop\\test'</span>],</span><br><span class="line">             binaries=[],</span><br><span class="line">             datas=[],</span><br><span class="line">             hiddenimports=[<span class="string">"eel"</span>,<span class="string">"gevent"</span>,<span class="string">"gevent.__hub_local"</span>,<span class="string">"gevent.__greenlet_primitives"</span>],</span><br><span class="line">             hookspath=[],</span><br><span class="line">             runtime_hooks=[],</span><br><span class="line">             excludes=[],</span><br><span class="line">             win_no_prefer_redirects=False,</span><br><span class="line">             win_private_assemblies=False,</span><br><span class="line">             cipher=block_cipher,</span><br><span class="line">             noarchive=False)</span><br></pre></td></tr></table></figure></p>
+<p>在hiddenimports中加入缺失的库，成功。（其实是上一个库提示有了，然后又提示了别的。。一个一个往里加好了）</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
