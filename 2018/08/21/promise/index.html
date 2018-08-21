@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Bellong">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="JS中Promise函数的使用"/>
+  <meta property="og:description" content="艦これ、始まるよ" />
+  <meta property="og:site_name" content="Bellong様"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://yoursite.com"/>
+  
+    <link rel="alternate" href="/atom.xml" title="Bellong様" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Bellong様</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/timg2.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">JS中Promise函数的使用</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/GreeeenPepper">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:wuyize1994@163.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Bellong</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2018-08-21</span>
+            <span class="time">22:45:40</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/javascript/">javascript</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/javascript/">#javascript</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>前几天投了阿里的前端岗位。。上来有个30分钟的测验。。进去一看是promise函数的使用。。老纸不会啊。。只好学习了一拨儿。。</p>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实现mergePromise函数，把传进去的数组顺序先后执行，</span></span><br><span class="line"><span class="comment">//并且把返回的数据先后放到数组data中</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> timeout = <span class="function"><span class="params">ms</span> =&gt;</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">resolve();</span><br><span class="line">&#125;, ms);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ajax1 = <span class="function"><span class="params">()</span> =&gt;</span> timeout(<span class="number">2000</span>).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'1'</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ajax2 = <span class="function"><span class="params">()</span> =&gt;</span> timeout(<span class="number">1000</span>).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'2'</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ajax3 = <span class="function"><span class="params">()</span> =&gt;</span> timeout(<span class="number">2000</span>).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'3'</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mergePromise = <span class="function"><span class="params">ajaxArray</span> =&gt;</span> &#123;</span><br><span class="line"><span class="comment">// 在这里实现你的代码</span></span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">mergePromise([ajax1, ajax2, ajax3]).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'done'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(data); <span class="comment">// data 为 [1, 2, 3]</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 分别输出</span></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 3</span></span><br><span class="line"><span class="comment">// done</span></span><br><span class="line"><span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+<p>学习了一下promise的用法</p>
+<ul>
+<li>关于new Promise和Promise.resolve()</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//new Promise() vs Promise.resolve()</span></span><br><span class="line"><span class="comment">//then 方法每次都会返回 promise实例对象</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">newPromise_resolve</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line">      resolve(); <span class="comment">//这里调resolve方法，则then方法会被调用</span></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'resolve里面的log'</span>);</span><br><span class="line">   &#125;)</span><br><span class="line">   <span class="comment">//先输出 resolve里面的log</span></span><br><span class="line">   <span class="comment">//后输出 then方法</span></span><br><span class="line">   <span class="comment">//这里很好地体现了 Promise实现了 node.js的异步机制</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">newPromise_resolve().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'then方法'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">newPromise_resolve();</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用Promise.resolve</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">promise_resolve</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">let</span> promise = <span class="built_in">Promise</span>.resolve();</span><br><span class="line">   promise</span><br><span class="line">   .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'promise_resolve1'</span>);</span><br><span class="line">   &#125;)</span><br><span class="line">   .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'promise_resolve2'</span>);</span><br><span class="line">   &#125;);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> promise;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//promise_resolve(); </span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">promise_forEach_then</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">let</span> ids = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">   <span class="keyword">let</span> promise = <span class="built_in">Promise</span>.resolve();</span><br><span class="line">   ids.forEach(<span class="function">(<span class="params">id</span>) =&gt;</span> &#123;</span><br><span class="line">      promise</span><br><span class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">         <span class="keyword">return</span> &#123;id&#125;</span><br><span class="line">      &#125;)</span><br><span class="line">      .then(consoleLogId)</span><br><span class="line">   &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">consoleLogId</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'promise_forEach_then---'</span> + id);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//promise_forEach_then();</span></span><br></pre></td></tr></table></figure>
+<p>原题所需要的是将三个ajax函数所带的数字按顺序放进data中，然后要按题目所要求的输出。</p>
+<blockquote>
+<p>Promise.resolve();</p>
+</blockquote>
+<p>用于将一个非Promise的对象转换为promise的对象。</p>
+<p>考虑四种情况：</p>
+<ul>
+<li>Promise.resolve接受一个Promise实例作为参数</li>
+</ul>
+<p>这种情况下Promise.resolve将不作任何修改，返回这个实例。</p>
+<ul>
+<li>Promise.resolve接受一个thenable对象作为参数</li>
+</ul>
+<p>会将thenable对象转换为promise对象，并执行thenable对象的then方法</p>
+<p>网上给出了实例如下：</p>
+<blockquote>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> thenable = &#123;</span><br><span class="line">then: <span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">resolve(<span class="number">42</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> p1 = <span class="built_in">Promise</span>.resolve(thenable);</span><br><span class="line">p1.then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(value); <span class="comment">// 42</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>上面代码中，thenable对象的then方法执行后，对象p1的状态就变为resolved，从而立即执行最后那个then方法指定的回调函数，输出 42。</p>
+<ul>
+<li>Promise.resolve 接受一个不是具有then方法的对象，或根本就不是对象</li>
+</ul>
+<p>Promise.resolve方法返回一个新的Promise对象，状态为resolved。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p = <span class="built_in">Promise</span>.resolve(<span class="string">'Hello'</span>);</span><br><span class="line">p.then(<span class="function"><span class="keyword">function</span> (<span class="params">s</span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(s)</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// Hello</span></span><br></pre></td></tr></table></figure>
+<p>上面代码生成一个新的 Promise 对象的实例p。由于字符串Hello不属于异步操作（判断方法是字符串对象不具有 then 方法），返回 Promise 实例的状态从一生成就是resolved，所以回调函数会立即执行。Promise.resolve方法的参数，会同时传给回调函数。</p>
+<ul>
+<li>Promise.resolve不带有任何参数</li>
+</ul>
+<p>不带有任何参数的时候会直接返回一个resolved状态的Promise对象。<br>所以希望得到一个promise对象，比较方便的方法就是直接调用Promise.resolved()。</p>
+<p>原题中需要将一个函数数组中的函数按顺序添加到事件队列中并执行，同时将每个函数的返回值添加到data数组中，在函数数组执行完后输出。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mergePromise = <span class="function"><span class="params">ajaxArray</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> data = [];</span><br><span class="line">    <span class="keyword">let</span> promise = <span class="built_in">Promise</span>.resolve();</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;ajaxArray.length;i++)&#123;</span><br><span class="line">        promise = promise.then(ajaxArray[i]).then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">            data.push(res);</span><br><span class="line">            <span class="keyword">return</span> data;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">      <span class="comment">// ajaxArray.forEach((ajax) =&gt; &#123;</span></span><br><span class="line">        <span class="comment">//     promise = promise.then(ajax).then(function (res) &#123;</span></span><br><span class="line">        <span class="comment">//         data.push(res);</span></span><br><span class="line">        <span class="comment">//         return data;</span></span><br><span class="line">        <span class="comment">//     &#125;)</span></span><br><span class="line">        <span class="comment">// &#125;);</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> promise;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>首先用Promise.resolve()生成作为起始的事件队列。<br>第一个promise.then(ajaxArray[i])将数组中的函数执行，下一个.then(function(res){})将每个函数的返回值依次填进data数组中，同时将这个数组作为return的返回值。<br>这样在第三次循环时就会将[1,2,3]返回并输出。</p>
+<p>另外也学习了一下.forEach()这个方法的使用。</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
