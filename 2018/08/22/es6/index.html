@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Bellong">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="es6与es5的一些常见对比问题"/>
+  <meta property="og:description" content="艦これ、始まるよ" />
+  <meta property="og:site_name" content="Bellong様"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://yoursite.com"/>
+  
+    <link rel="alternate" href="/atom.xml" title="Bellong様" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Bellong様</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/timg2.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">es6与es5的一些常见对比问题</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/GreeeenPepper">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:wuyize1994@163.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Bellong</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2018-08-22</span>
+            <span class="time">23:57:46</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/javascript/">javascript</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/javascript/">#javascript</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>记录一些关于ES5与ES6相关的前端知识。<br><a id="more"></a></p>
+<ul>
+<li><h3 id="let与var的区别"><a href="#let与var的区别" class="headerlink" title="let与var的区别"></a>let与var的区别</h3></li>
+</ul>
+<p>ES5只有全局作用域和函数作用域，没有块级作用域，ES6中新增的let实际上为javascript新增了块级作用域。<br>let所声明的变量只在let命令所在的代码块内有效。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">  &#123;</span><br><span class="line">                <span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line">  &#125;</span><br><span class="line">            <span class="built_in">console</span>.log(b);</span><br><span class="line">            <span class="built_in">console</span>.log(a);  <span class="comment">//报错，找不到。</span></span><br><span class="line">            <span class="comment">//for循环的计数器，就很适合用let</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(i);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//譬如要解决以下代码依次输出0-4的问题</span></span><br><span class="line">       </span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;,<span class="number">1000</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//就可以通过将var改为let来完成</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;,<span class="number">1000</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><h3 id="闭包的使用"><a href="#闭包的使用" class="headerlink" title="闭包的使用"></a>闭包的使用</h3></li>
+</ul>
+<p>与上面的问题很类似，可以使用ES5的闭包来解决<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">   (<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">       setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">           <span class="built_in">console</span>.log(x);</span><br><span class="line">       &#125;,<span class="number">1000</span>);</span><br><span class="line">   &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>还有另外一种方法叫立即执行函数也可以解决上述问题。<br>立即执行函数的写法是 (function(){ … }()) 就可以立即调用该函数。 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">    setTimeout((<span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(value);</span><br><span class="line">    &#125;(i)),<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>console.log()函数就是一个立即执行函数，比如如果我们这么写<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">    setTimeout(</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    ,<span class="number">1000</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>就会输出0-4</p>
+<ul>
+<li><h3 id="继承的实现"><a href="#继承的实现" class="headerlink" title="继承的实现"></a>继承的实现</h3></li>
+</ul>
+<p>在ES5中并没有传统的面向对象的概念，javascript利用原型链的特性来实现继承。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Super</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.flag = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//父类</span></span><br><span class="line"></span><br><span class="line">Super.prototype.getFlag = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.flag;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//为了提高复用性，方法绑定在父类原型属性上</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Sub</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.subFlag = <span class="literal">true</span>;</span><br><span class="line">    Super.call(<span class="keyword">this</span>);    </span><br><span class="line">    <span class="comment">//这里永用于继承属性，并且不使原型中属性的改变反应到所有的实例上</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Sub.prototype = <span class="keyword">new</span> Super;</span><br><span class="line">Sub.prototype.constructor = Sub;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> Sub();</span><br><span class="line">Sub.prototype.getSubFlag = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>顺便再记录一下显示原型prototype和隐式原型<strong>prototype</strong>的关系：<br>每一个<strong>函数</strong>在创建之后都会拥有一个名为prototype的属性，指向函数的原型对象。<br>任意对象都有一个内置属性，大部分浏览器支持通过<strong>proto</strong>来访问。<br>隐式原型指向创建这个函数的constructor的显式原型。</p>
+<p>ES6中封装了class，extends等关键字来实现继承。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(value)&#123;</span><br><span class="line">        <span class="keyword">this</span>.value = value;</span><br><span class="line">    &#125;</span><br><span class="line">    test()&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(val1,val2)&#123;</span><br><span class="line">        <span class="keyword">super</span>(val1);</span><br><span class="line">        <span class="keyword">this</span>.B_value = val2;</span><br><span class="line">    &#125;</span><br><span class="line">    testB()&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>.value + <span class="string">'_'</span>+ <span class="keyword">this</span>.B_value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> B(<span class="number">3</span>,<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Map + Set + WeakMap + WeakSet 四种集合类型<br>四种集合类型，WeakMap、WeakSet作为属性键的对象如果没有别的变量在引用它们，则会被回收释放掉。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Sets</span></span><br><span class="line"><span class="keyword">var</span> s = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">s.add(<span class="string">"hello"</span>).add(<span class="string">"goodbye"</span>).add(<span class="string">"hello"</span>);</span><br><span class="line">s.size === <span class="number">2</span>;</span><br><span class="line">s.has(<span class="string">"hello"</span>) === <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Maps</span></span><br><span class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">m.set(<span class="string">"hello"</span>, <span class="number">42</span>);</span><br><span class="line">m.set(s, <span class="number">34</span>);</span><br><span class="line">m.get(s) == <span class="number">34</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//WeakMap</span></span><br><span class="line"><span class="keyword">var</span> wm = <span class="keyword">new</span> <span class="built_in">WeakMap</span>();</span><br><span class="line">wm.set(s, &#123; <span class="attr">extra</span>: <span class="number">42</span> &#125;);</span><br><span class="line">wm.size === <span class="literal">undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Weak Sets</span></span><br><span class="line"><span class="keyword">var</span> ws = <span class="keyword">new</span> <span class="built_in">WeakSet</span>();</span><br><span class="line">ws.add(&#123; <span class="attr">data</span>: <span class="number">42</span> &#125;);<span class="comment">//Because the added object has no other references, it will not be held in the set</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
