@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Bellong">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="携程前端笔试题"/>
+  <meta property="og:description" content="艦これ、始まるよ" />
+  <meta property="og:site_name" content="Bellong様"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://yoursite.com"/>
+  
+    <link rel="alternate" href="/atom.xml" title="Bellong様" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Bellong様</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/timg2.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">携程前端笔试题</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/GreeeenPepper">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:wuyize1994@163.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Bellong</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2018-09-05</span>
+            <span class="time">19:00:15</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/exam/">exam</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/exam/">#exam</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>一共三道题，前两道没啥难度，第三道啥玩意儿啊。。<br><a id="more"></a></p>
+<ul>
+<li><p>第一题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;sstream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    string input;</span><br><span class="line">    string num[4];</span><br><span class="line">    while(cin&gt;&gt;input)&#123;</span><br><span class="line">        for(int i=0;i&lt;4;i++)&#123;</span><br><span class="line">            num[i] = &quot;&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        int dotflag = 0;</span><br><span class="line">        int a = 0;</span><br><span class="line">        int count = 0;</span><br><span class="line">        for(int x =0 ;x&lt;input.length();x++)&#123;</span><br><span class="line">            if(input[x] == &apos;.&apos;)&#123;</span><br><span class="line">                dotflag ++ ;</span><br><span class="line">                int start = a;</span><br><span class="line">                int end = x;</span><br><span class="line">                string temp = input;</span><br><span class="line">                string number = temp.substr(start,end-start);</span><br><span class="line">                num[count] = number;</span><br><span class="line">                count++;</span><br><span class="line">                a = x+1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        num[3] = input.substr(a,input.length()-a);</span><br><span class="line">        if(dotflag != 3)&#123;</span><br><span class="line">            cout&lt;&lt;&quot;false&quot;&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            bool flag = true;</span><br><span class="line">            for(int i=0;i&lt;4;i++)&#123;</span><br><span class="line">               cout&lt;&lt;num[i]&lt;&lt;endl;</span><br><span class="line">                if(i==0)&#123;</span><br><span class="line">                    if(num[i][0]==&apos;0&apos;)&#123;</span><br><span class="line">                        flag = false;</span><br><span class="line">                        break;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                else&#123;</span><br><span class="line">                    istringstream is(num[i]);</span><br><span class="line">                    int trans;</span><br><span class="line">                    is &gt;&gt; trans; </span><br><span class="line">                    /*从is流中读入一个int整数存入i中*/</span><br><span class="line">                    cout&lt;&lt;trans&lt;&lt;endl;</span><br><span class="line">                    if(trans&lt;0 || trans &gt;255)&#123;</span><br><span class="line">                        flag = false;</span><br><span class="line">                        break;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            if(flag)&#123;</span><br><span class="line">                cout&lt;&lt;&quot;true&quot;&lt;&lt;endl;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                cout&lt;&lt;&quot;false&quot;&lt;&lt;endl;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第二题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cmath&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;sstream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">bool isPrime(int n)&#123;</span><br><span class="line">    int flag;</span><br><span class="line">    if(n&lt;=0 || n==1)</span><br><span class="line">        return false;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        flag=0;</span><br><span class="line">        for(int i=2;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(n%i==0)</span><br><span class="line">            &#123;</span><br><span class="line">                flag = 1;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(flag==0)</span><br><span class="line">        &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;ex</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    string n;</span><br><span class="line">    while(cin&gt;&gt;n)&#123;</span><br><span class="line">        string temp;</span><br><span class="line">        temp = n.substr(2,n.length()-2);</span><br><span class="line">        int sum = 0;</span><br><span class="line">        istringstream is(temp);</span><br><span class="line">        int trans;</span><br><span class="line">        is &gt;&gt; trans;</span><br><span class="line">        for(int j=0;j&lt;trans-1;j++)&#123;</span><br><span class="line">            int number = 2*j + 1;</span><br><span class="line">            if(isPrime(number))&#123;</span><br><span class="line">                sum = sum + number;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;sum&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
